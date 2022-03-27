@@ -1,0 +1,337 @@
+{
+  "info": {
+    "_postman_id": "77035cfe-6937-45ac-ab90-ece2dc77acd6",
+    "name": "API_Petstore",
+    "description": "This is a sample server Petstore server.\n\nThe complete API documentation is available on [https://petstore.swagger.io/#/](https://petstore.swagger.io/#/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "PET",
+      "item": [
+        {
+          "name": "Add a new pet",
+          "item": [
+            {
+              "name": "POST - Add a new pet",
+              "_postman_id": "b3e7680f-e423-4a51-83e3-203781a7ede6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\": 0,\r\n    \"category\": {\r\n        \"id\": 0,\r\n        \"name\": \"string\"\r\n    },\r\n    \"name\": \"Joaquim\",\r\n    \"photoUrls\": [\r\n        \"string\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 0,\r\n            \"name\": \"string\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_padrao}}pet"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "e1673457-2e49-4288-aa0f-4b62b0157159",
+          "description": "Pet object that needs to be added to the store",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Find a new pet",
+          "item": [
+            {
+              "name": "Finds pets by status",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "0ab25276-2515-4f46-9b57-94c45e057d7c",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "bef5dbee-f54d-43ae-85f1-c4e80fa9ffdf",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url_padrao}}pet/findByStatus?status=available",
+                  "host": [
+                    "{{url_padrao}}pet"
+                  ],
+                  "path": [
+                    "findByStatus"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "available"
+                    }
+                  ]
+                },
+                "description": "Returns all the pets on this status"
+              },
+              "response": []
+            },
+            {
+              "name": "Find pet by ID",
+              "_postman_id": "27151e7f-8c9a-470d-9995-6d46849328c5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{url_padrao}}pet/{{id_pet}}",
+                "description": "Returns a single pet"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "d40f8260-a8d3-4952-91d2-4fca52a7a605",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Delete a pet",
+          "item": [
+            {
+              "name": "Deletes a pet",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "aaa2499c-b549-4a7a-ad53-604a4e51bc1a",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "_postman_id": "766799db-36d4-4a9f-acaf-c744a7ad8bd2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "apikey",
+                  "apikey": {
+                    "key": "api_key",
+                    "in": "header",
+                    "value": "dfsdfsdfsdfsdfdsf"
+                  }
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_padrao}}pet/{{id_pet}}"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "7623134a-6cda-40a7-bc88-442291e78834",
+          "description": "Deletes a specif pet",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "7215ed1f-9134-43ff-9215-de2447d31111",
+      "description": "This folder contains all the requests related to the Pets"
+    },
+    {
+      "name": "USER",
+      "item": [
+        {
+          "name": "Creates list of users with given input array",
+          "item": [
+            {
+              "name": "POST - Creates list of users",
+              "_postman_id": "9fa0fb31-76b3-434e-9651-1e7e65010bc4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"string\",\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Santos\",\r\n    \"email\": \"maria123@gmail.com\",\r\n    \"password\": \"testerbug\",\r\n    \"phone\": \"5531987458962\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "{{url_padrao}}user/createWithArray"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "d418ae4b-64c5-4cf1-90a9-e122f8f6ef58",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Logs user into the system",
+          "item": [
+            {
+              "name": "Logs user into the system",
+              "_postman_id": "3659ead2-77a5-4025-91cd-b582a5414277",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": {
+                    "password": "string",
+                    "username": "string"
+                  }
+                },
+                "method": "GET",
+                "header": [],
+                "url": "{{url_padrao}}user/login",
+                "description": "Logs users into the system using basic Auth"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "59b65a7d-09db-4230-ab8d-b677a38aa0bf",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Delete user",
+          "item": [
+            {
+              "name": "Delete user",
+              "_postman_id": "bb247d25-f24d-44c6-bee1-7b689cbd115f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "{{url_padrao}}user/{{username}}"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "e5308fe5-db97-405a-8308-68f4c30167d6",
+          "_postman_isSubFolder": true
+        }
+      ],
+      "_postman_id": "429a6478-7061-4439-9b91-8406a54d9998",
+      "description": "This folder includes all the operations about user"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "29e90dfe-1881-4b92-ba12-5d9b258f7a96",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "1c53dcf3-a770-4101-a72c-fea75db02ad1",
+        "type": "text/javascript",
+        "exec": [
+          "",
+          "//TESTES DAS REQUISIÇÕES GET AND POST",
+          "",
+          "if(pm.request.method == 'GET' || pm.request.method == 'POST'){",
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test(\"Status code name has string\", function () {",
+          "    pm.response.to.have.status(\"OK\");",
+          "    });",
+          "",
+          "pm.test(\"Content-Type is JSON\", () => {",
+          "    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+          "});",
+          "}",
+          "",
+          "// TESTE EXCLUSIVO DA REQUISIÇÃO POST",
+          "",
+          "if(pm.request.method == 'POST'){",
+          "",
+          "pm.test(\"Response time is less than 4s\", function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(400);",
+          "    });",
+          "",
+          "}",
+          "",
+          " // TESTES DA REQUISIÇÃO DELETE",
+          "",
+          "if(pm.request.method == 'DELETE'){",
+          "",
+          "    pm.test(\"Type contains ' unknown ' \", () => {",
+          "    const responseJson = pm.response.json();",
+          "    pm.expect(responseJson.type).to.eql(\"unknown\");",
+          "});",
+          "",
+          "    pm.test(\"Code contains 200 \", () => {",
+          "    const responseJson = pm.response.json();",
+          "    pm.expect(responseJson.code).to.eql(200);",
+          "});",
+          "",
+          "}",
+          "",
+          "// TESTE DE CONTRATO - Validação do body da response para criação de usuário",
+          "",
+          "if(pm.info.requestName=='POST - Creates list of users'){",
+          "",
+          "const schema = {",
+          "  \"properties\": {",
+          "    \"code\": {",
+          "      \"type\": \"number\"",
+          "    },",
+          "    \"type\": {",
+          "      \"type\": \"string\"",
+          "    },",
+          "    \"message\": {",
+          "      \"type\": \"string\"",
+          "    },",
+          "  }",
+          "};",
+          "",
+          "pm.test('Schema is valid', function() {",
+          "  pm.response.to.have.jsonSchema(schema);",
+          "});",
+          "",
+          "}",
+          "",
+          "// PARAMETRIZAÇÃO DO 'id_pet' PARA UTILIZAÇÃO NOS DEMAIS REQUESTS",
+          "",
+          "if(pm.info.requestName=='POST - Add a new pet'){",
+          "    pm.environment.set(\"id_pet\", JSON.parse(pm.response.text().replace(/\"id\":[\\s]*([\\d]+),/,'\"id\":\"$1\",')).id);",
+          "",
+          "}",
+          "",
+          "",
+          "/*",
+          "if(pm.info.requestName=='POST - Create a Lead'){",
+          "pm.environment.set(\"id_lead\",pm.response.json().data.id);",
+          "}",
+          "",
+          "*/",
+          "",
+          ""
+        ]
+      }
+    }
+  ]
+}

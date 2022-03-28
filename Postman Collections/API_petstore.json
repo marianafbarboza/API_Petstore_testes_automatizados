@@ -14,7 +14,7 @@
           "item": [
             {
               "name": "POST - Add a new pet",
-              "_postman_id": "b3e7680f-e423-4a51-83e3-203781a7ede6",
+              "id": "b3e7680f-e423-4a51-83e3-203781a7ede6",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -35,9 +35,8 @@
               "response": []
             }
           ],
-          "_postman_id": "e1673457-2e49-4288-aa0f-4b62b0157159",
-          "description": "Pet object that needs to be added to the store",
-          "_postman_isSubFolder": true
+          "id": "e1673457-2e49-4288-aa0f-4b62b0157159",
+          "description": "Pet object that needs to be added to the store"
         },
         {
           "name": "Find a new pet",
@@ -56,7 +55,7 @@
                   }
                 }
               ],
-              "_postman_id": "bef5dbee-f54d-43ae-85f1-c4e80fa9ffdf",
+              "id": "bef5dbee-f54d-43ae-85f1-c4e80fa9ffdf",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -84,7 +83,7 @@
             },
             {
               "name": "Find pet by ID",
-              "_postman_id": "27151e7f-8c9a-470d-9995-6d46849328c5",
+              "id": "27151e7f-8c9a-470d-9995-6d46849328c5",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -97,8 +96,7 @@
               "response": []
             }
           ],
-          "_postman_id": "d40f8260-a8d3-4952-91d2-4fca52a7a605",
-          "_postman_isSubFolder": true
+          "id": "d40f8260-a8d3-4952-91d2-4fca52a7a605"
         },
         {
           "name": "Delete a pet",
@@ -117,7 +115,7 @@
                   }
                 }
               ],
-              "_postman_id": "766799db-36d4-4a9f-acaf-c744a7ad8bd2",
+              "id": "766799db-36d4-4a9f-acaf-c744a7ad8bd2",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -137,12 +135,11 @@
               "response": []
             }
           ],
-          "_postman_id": "7623134a-6cda-40a7-bc88-442291e78834",
-          "description": "Deletes a specif pet",
-          "_postman_isSubFolder": true
+          "id": "7623134a-6cda-40a7-bc88-442291e78834",
+          "description": "Deletes a specif pet"
         }
       ],
-      "_postman_id": "7215ed1f-9134-43ff-9215-de2447d31111",
+      "id": "7215ed1f-9134-43ff-9215-de2447d31111",
       "description": "This folder contains all the requests related to the Pets"
     },
     {
@@ -153,7 +150,7 @@
           "item": [
             {
               "name": "POST - Creates list of users",
-              "_postman_id": "9fa0fb31-76b3-434e-9651-1e7e65010bc4",
+              "id": "9fa0fb31-76b3-434e-9651-1e7e65010bc4",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -174,15 +171,14 @@
               "response": []
             }
           ],
-          "_postman_id": "d418ae4b-64c5-4cf1-90a9-e122f8f6ef58",
-          "_postman_isSubFolder": true
+          "id": "d418ae4b-64c5-4cf1-90a9-e122f8f6ef58"
         },
         {
           "name": "Logs user into the system",
           "item": [
             {
               "name": "Logs user into the system",
-              "_postman_id": "3659ead2-77a5-4025-91cd-b582a5414277",
+              "id": "3659ead2-77a5-4025-91cd-b582a5414277",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -202,15 +198,14 @@
               "response": []
             }
           ],
-          "_postman_id": "59b65a7d-09db-4230-ab8d-b677a38aa0bf",
-          "_postman_isSubFolder": true
+          "id": "59b65a7d-09db-4230-ab8d-b677a38aa0bf"
         },
         {
           "name": "Delete user",
           "item": [
             {
               "name": "Delete user",
-              "_postman_id": "bb247d25-f24d-44c6-bee1-7b689cbd115f",
+              "id": "bb247d25-f24d-44c6-bee1-7b689cbd115f",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -222,11 +217,10 @@
               "response": []
             }
           ],
-          "_postman_id": "e5308fe5-db97-405a-8308-68f4c30167d6",
-          "_postman_isSubFolder": true
+          "id": "e5308fe5-db97-405a-8308-68f4c30167d6"
         }
       ],
-      "_postman_id": "429a6478-7061-4439-9b91-8406a54d9998",
+      "id": "429a6478-7061-4439-9b91-8406a54d9998",
       "description": "This folder includes all the operations about user"
     }
   ],
@@ -234,7 +228,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "29e90dfe-1881-4b92-ba12-5d9b258f7a96",
+        "id": "466ba92e-c8f2-4672-9338-ca379b31b20f",
         "type": "text/javascript",
         "exec": [
           ""
@@ -244,7 +238,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "1c53dcf3-a770-4101-a72c-fea75db02ad1",
+        "id": "c1aa787c-ceae-4d7a-be3b-38255343d4e8",
         "type": "text/javascript",
         "exec": [
           "",
@@ -320,15 +314,6 @@
           "    pm.environment.set(\"id_pet\", JSON.parse(pm.response.text().replace(/\"id\":[\\s]*([\\d]+),/,'\"id\":\"$1\",')).id);",
           "",
           "}",
-          "",
-          "",
-          "/*",
-          "if(pm.info.requestName=='POST - Create a Lead'){",
-          "pm.environment.set(\"id_lead\",pm.response.json().data.id);",
-          "}",
-          "",
-          "*/",
-          "",
           ""
         ]
       }

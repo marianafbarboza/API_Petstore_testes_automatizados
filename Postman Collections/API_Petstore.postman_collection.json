@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "77035cfe-6937-45ac-ab90-ece2dc77acd6",
+		"name": "API_Petstore",
+		"description": "This is a sample server Petstore server.\n\nThe complete API documentation is available on [https://petstore.swagger.io/#/](https://petstore.swagger.io/#/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PET",
+			"item": [
+				{
+					"name": "Add a new pet",
+					"item": [
+						{
+							"name": "POST - Add a new pet",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 0,\r\n    \"category\": {\r\n        \"id\": 0,\r\n        \"name\": \"string\"\r\n    },\r\n    \"name\": \"Joaquim\",\r\n    \"photoUrls\": [\r\n        \"string\"\r\n    ],\r\n    \"tags\": [\r\n        {\r\n            \"id\": 0,\r\n            \"name\": \"string\"\r\n        }\r\n    ],\r\n    \"status\": \"available\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_padrao}}pet",
+									"host": [
+										"{{url_padrao}}pet"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Pet object that needs to be added to the store"
+				},
+				{
+					"name": "Find a new pet",
+					"item": [
+						{
+							"name": "Finds pets by status",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_padrao}}pet/findByStatus?status=available",
+									"host": [
+										"{{url_padrao}}pet"
+									],
+									"path": [
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "available"
+										}
+									]
+								},
+								"description": "Returns all the pets on this status"
+							},
+							"response": []
+						},
+						{
+							"name": "Find pet by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_padrao}}pet/{{id_pet}}",
+									"host": [
+										"{{url_padrao}}pet"
+									],
+									"path": [
+										"{{id_pet}}"
+									]
+								},
+								"description": "Returns a single pet"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete a pet",
+					"item": [
+						{
+							"name": "Deletes a pet",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "api_key",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "dfsdfsdfsdfsdfdsf",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_padrao}}pet/{{id_pet}}",
+									"host": [
+										"{{url_padrao}}pet"
+									],
+									"path": [
+										"{{id_pet}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Deletes a specif pet"
+				}
+			],
+			"description": "This folder contains all the requests related to the Pets"
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Creates list of users with given input array",
+					"item": [
+						{
+							"name": "POST - Creates list of users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"string\",\r\n    \"firstName\": \"Maria\",\r\n    \"lastName\": \"Santos\",\r\n    \"email\": \"maria123@gmail.com\",\r\n    \"password\": \"testerbug\",\r\n    \"phone\": \"5531987458962\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_padrao}}user/createWithArray",
+									"host": [
+										"{{url_padrao}}user"
+									],
+									"path": [
+										"createWithArray"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Logs user into the system",
+					"item": [
+						{
+							"name": "Logs user into the system",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "string",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "string",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_padrao}}user/login",
+									"host": [
+										"{{url_padrao}}user"
+									],
+									"path": [
+										"login"
+									]
+								},
+								"description": "Logs users into the system using basic Auth"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete user",
+					"item": [
+						{
+							"name": "Delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_padrao}}user/{{username}}",
+									"host": [
+										"{{url_padrao}}user"
+									],
+									"path": [
+										"{{username}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This folder includes all the operations about user"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"//TESTES DAS REQUISIÇÕES GET AND POST",
+					"",
+					"if(pm.request.method == 'GET' || pm.request.method == 'POST'){",
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Status code name has string\", function () {",
+					"    pm.response.to.have.status(\"OK\");",
+					"    });",
+					"",
+					"pm.test(\"Content-Type is JSON\", () => {",
+					"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+					"});",
+					"}",
+					"",
+					"// TESTE EXCLUSIVO DA REQUISIÇÃO POST",
+					"",
+					"if(pm.request.method == 'POST'){",
+					"",
+					"pm.test(\"Response time is less than 4s\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(400);",
+					"    });",
+					"",
+					"}",
+					"",
+					" // TESTES DA REQUISIÇÃO DELETE",
+					"",
+					"if(pm.request.method == 'DELETE'){",
+					"",
+					"    pm.test(\"Type contains ' unknown ' \", () => {",
+					"    const responseJson = pm.response.json();",
+					"    pm.expect(responseJson.type).to.eql(\"unknown\");",
+					"});",
+					"",
+					"    pm.test(\"Code contains 200 \", () => {",
+					"    const responseJson = pm.response.json();",
+					"    pm.expect(responseJson.code).to.eql(200);",
+					"});",
+					"",
+					"}",
+					"",
+					"// TESTE DE CONTRATO - Validação do body da response para criação de usuário",
+					"",
+					"if(pm.info.requestName=='POST - Creates list of users'){",
+					"",
+					"const schema = {",
+					"  \"properties\": {",
+					"    \"code\": {",
+					"      \"type\": \"number\"",
+					"    },",
+					"    \"type\": {",
+					"      \"type\": \"string\"",
+					"    },",
+					"    \"message\": {",
+					"      \"type\": \"string\"",
+					"    },",
+					"  }",
+					"};",
+					"",
+					"pm.test('Schema is valid', function() {",
+					"  pm.response.to.have.jsonSchema(schema);",
+					"});",
+					"",
+					"}",
+					"",
+					"// PARAMETRIZAÇÃO DO 'id_pet' PARA UTILIZAÇÃO NOS DEMAIS REQUESTS",
+					"",
+					"if(pm.info.requestName=='POST - Add a new pet'){",
+					"    pm.environment.set(\"id_pet\", JSON.parse(pm.response.text().replace(/\"id\":[\\s]*([\\d]+),/,'\"id\":\"$1\",')).id);",
+					"",
+					"}",
+					"",
+					"",
+					"/*",
+					"if(pm.info.requestName=='POST - Create a Lead'){",
+					"pm.environment.set(\"id_lead\",pm.response.json().data.id);",
+					"}",
+					"",
+					"*/",
+					"",
+					""
+				]
+			}
+		}
+	]
+}
